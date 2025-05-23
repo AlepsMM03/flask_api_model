@@ -3,3 +3,4 @@ gunicorn
 joblib
 numpy
 flask-cors
+scikit-learn
