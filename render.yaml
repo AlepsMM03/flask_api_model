@@ -1,0 +1,12 @@
+# Exported from Render on 2025-05-23T22:45:30Z
+services:
+- type: web
+  name: flask_api_model
+  runtime: python
+  repo: https://github.com/AlepsMM03/flask_api_model
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app
+  autoDeployTrigger: commit
+version: "1"
