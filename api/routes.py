@@ -26,7 +26,6 @@ def predict():
     ]).reshape(1, -1)
 
     prediction = model.predict(features)[0]
-
     diagnosis = "Positivo para infarto" if prediction == 1 else "Negativo para infarto"
 
     return jsonify({
