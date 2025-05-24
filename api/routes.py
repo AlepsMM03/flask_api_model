@@ -26,10 +26,13 @@ def predict():
     ]).reshape(1, -1)
 
     prediction = model.predict(features)[0]
+    proba = model.predict_proba(features)[0][1]
+
     diagnosis = "Positivo para infarto" if prediction == 1 else "Negativo para infarto"
 
     return jsonify({
         "prediction": int(prediction),
+        "probability": float(proba),  # Aseguramos que sea float para JSON
         "diagnosis": diagnosis,
         "input": {
             "Troponin": data['Troponin'],
